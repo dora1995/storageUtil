@@ -1,0 +1,30 @@
+{
+  "name": "storageutil",
+  "version": "1.0.0",
+  "description": "for localStorage and sessionStorage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dora1995/storageUtil.git"
+  },
+  "keywords": [
+    "localStorage",
+    "sessionStorage"
+  ],
+  "author": "dora1995",
+  "private": false,
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dora1995/storageUtil/issues"
+  },
+  "homepage": "https://github.com/dora1995/storageUtil#readme",
+  "devDependencies": {
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}
