@@ -1,0 +1,2 @@
+# storageUtil
+关于对localStorage和sessionStorage的操作封装
