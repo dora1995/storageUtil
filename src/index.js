@@ -1,13 +1,13 @@
 import assignMethods from './assignMethods'
 
-export const local = {
+export const localHK = {
   target: window.localStorage || null
 }
-assignMethods(local)
+assignMethods(localHK)
 
-export const session = {
+export const sessionHK = {
   target: window.sessionStorage || null
 }
-assignMethods(session)
+assignMethods(sessionHK)
 
 console.log('hello')
