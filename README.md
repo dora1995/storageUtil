@@ -1,48 +1,45 @@
-# storageUtil
+# storageutil
 关于对localStorage和sessionStorage的操作封装
 
-用法一：
+背景：浏览器端提供的window.localStorage和window.sessionStorage中的**value参数保存后都是字符串格式**。为保证值的正确存储和读取，一般会在保存时先对值的处理比如：`JSON.stringify(obj)`，然后在取值时将它转换回来：`JSON.parse(str)`。为提高代码可读性与减少冗余，将这些操作封装成方法提供使用
+
+引入：
 ```javascript
-import {localS, sessionS} from 'storageUtil'
-// 获取
-localS.getItem(key)
-// 设置
-localS.setItem(key, value)
-// 移除某一项
-localS.removeItem(key)
-// 移除所有
-localS.clear()
-// 获取
-sessionS.getItem(key)
-// 设置
-sessionS.setItem(key, value)
-// 移除某一项
-sessionS.removeItem(key)
-// 移除所有
-sessionS.clear()
+// 安装
+npm install storageutil
+
+yarn add storageutil
 ```
 
-用法二：
+API与用法：
 ```javascript
-// 不知道要不要这样
-util(key)
-util(key, value)
+import { $local, $session } from 'storageutil'
 
-// 如果不传type，则默认操作localStorage
-util.getItem(key)
-util.setItem(key, value)
-util.removeItem(key)
-util.clear()
+let key = 'test'
+let value = {
+  one: '1',
+  two: 2,
+  three: false
+}
+// 设置
+$local.set(key, value)
+// 获取
+$local.get(key)
+// 移除某一项
+$local.remove(key)
+// 移除所有
+$local.clear()
+// 判断是否含有
+$local.has(key)
 
-// type = 'l'，操作localStorage
-util.getItem('l', key)
-util.setItem('l', key, value)
-util.removeItem('l', key)
-util.clear('l')
-
-// type = 's'，操作sessionStorage
-util.getItem('l', key)
-util.setItem('l', key, value)
-util.removeItem('l', key)
-util.clear('l')
+// 获取
+$session.get(key)
+// 设置
+$session.set(key, value)
+// 移除某一项
+$session.remove(key)
+// 移除所有
+$session.clear()
+// 判断是否含有
+$session.has(key)
 ```
